@@ -1,0 +1,19 @@
+<h1>Great Number Game </h1>
+<p> I am thinking of a number between 1 and 100</p>
+<p> Take a guess!</p>
+<form class="" action="/numbers/guess" method="get">
+  <input type="text" name="number" placeholder="Guess">
+</form>
+<% if flash[:num]%>
+  <div class="<%=flash[:color]%>">
+    <%=flash[:num]%>
+  </div>
+<%end%>
+
+<% if flash[:correct]%>
+  <div class="<%=flash[:color]%>">
+    <%=flash[:correct]%>
+    <br>
+    <a href="/">Play Again !!!</a>
+  </div>
+<%end%>
