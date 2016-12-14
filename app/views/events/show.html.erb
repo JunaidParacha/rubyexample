@@ -1,0 +1,35 @@
+<%=link_to 'Dashboard', events_path%>
+<h2><%=@event.name%></h2>
+Host: <p><%=@event.user.Last_name%> <%=@event.user.first_name%></p>
+Date: <p><%=@event.date.strftime("%B %d, %Y")%></p>
+Location: <p><%=@event.location%>, <%=@event.state%></p>
+<p>People who are joining the event: <%=@eventcount.count%></p>
+<br>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Location</th>
+    <th>State</th>
+  </tr>
+  <%@eventcount.each do |event|%>
+    <tr>
+      <td><%=event.user.first_name%> <%=event.user.Last_name%></td>
+      <td><%=event.user.location%></td>
+      <td><%=event.user.state%></td>
+    </tr>
+  <%end%>
+</table>
+<fieldset><legend>Discussion about the event</legend>
+  <% @comments.each do |comment|%>
+    <ul>
+      <li><%=comment.user.first_name%> said: <%=comment.comment%></li>
+      <li>........................</li>
+    </ul>
+  <%end%>
+  <form class="" action="/comments/" method="post">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+    <input type="hidden" name="comment[even_id]" value="<%=@event.id%>">
+    <textarea name="comment[comment]" rows="8" cols="40"></textarea>
+    <input type="submit" name="name" value="Submit">
+  </form>
+</fieldset>

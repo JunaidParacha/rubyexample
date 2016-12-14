@@ -1,0 +1,80 @@
+// Place all the styles related to the Logins controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+// body {
+//   width: 970px;
+//   padding: auto;
+//   margin: auto;
+//   vertical-align: top;
+// }
+// input {
+//   display: block;
+// }
+// fieldset {
+//   width: 300px;
+//
+//   display: inline-block;
+//   vertical-align: top;
+//
+// }
+// table, td, th{
+//   border-collapse: collapse;
+//   border: 2px solid black;
+// }
+// ul {
+//   list-style:  none;
+// }
+*{
+  font-family: avenir;
+  text-align: center;
+}
+fieldset{
+  display: inline-block;
+  width: 300px;
+  vertical-align: top;
+}
+b{
+  color: red;
+}
+input[type = submit] {
+  width: 100px;
+  border-radius: 15%;
+  background-color: #00947e ;
+  color: white;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+h1, legend{
+  color: #00947e ;
+}
+table, tr, td, th {
+   border: black solid 1px;
+   padding: 10px;
+ }
+ fieldset {
+   width: 700px;
+   margin: auto;
+ }
+ th, h1, legend{
+   color: #00947e ;
+ }
+ button{
+   background-color: #00947e ;
+   color: white;
+ }
+ table {
+   background-color: lightgray;
+   overflow: scroll;
+   margin: auto;
+ }
+ tr, td, th {
+   background-color: white;
+ }
+ .event{
+   display: inline-block;
+   vertical-align: top;
+   width: 630px;
+ }
+ .table{
+   overflow: scroll;
+   height: 450px;
+ }
