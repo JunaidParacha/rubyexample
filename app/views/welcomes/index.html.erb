@@ -1,0 +1,36 @@
+<h1>Welcomes</h1>
+</fieldset>
+<% if flash[:error]%>
+  <fieldset><legend>Errors</legend>
+    <% flash[:error].each do |err|%>
+      <ul>
+        <li>
+          <%= err %>
+        </li>
+      </ul>
+    <%end%>
+  </fieldset>
+<%end%>
+<fieldset><legend>Login</legend>
+  <form  action="/login" method="post">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+    <input type="email" name="login[email]" placeholder="Email">
+    <br>
+    <input type="password" name="login[password]" placeholder="Password">
+    <br>
+    <input type="submit" value="submit">
+  </form>
+</fieldset>
+
+<fieldset><legend>Registration</legend>
+  <form  action="/reg" method="post">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+    <input type="email" name="reg[email]" placeholder="Email">
+    <br>
+    <input type="password" name="reg[password]" placeholder="Password">
+    <br>
+    <input type="password" name="reg[password_confirmation]" placeholder="Password_confirmation">
+    <br>
+    <input type="submit" value="submit">
+  </form>
+</fieldset>
