@@ -6,6 +6,8 @@ class DashboardsController < ApplicationController
     @sale = Sale.all.select("sales.shoe_id")
     @purchases = Purchase.where(user_id:User.find(session[:user])).includes(:shoe).includes(:user)
     @totalsale = Sale.where(user:User.find(session[:user])).includes(:shoe).includes(:user)
+    @saletotal =Sale.where(user:User.find(session[:user])).includes(:shoe).sum(:price)
+    @purchasetotal =Purchase.where(user_id:User.find(session[:user])).includes(:shoe).includes(:user).sum(:price)
   end
   def create
     product = Shoe.new(product_params.merge(user:User.find(session[:user])))
