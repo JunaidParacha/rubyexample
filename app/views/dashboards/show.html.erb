@@ -1,0 +1,75 @@
+<p>
+  Hi <%=session[:username]%>
+  <%=link_to 'All Products', shoes_path%>
+  <%=link_to 'Log Out', logout_path%>
+</p>
+<h2>Sell Product</h2>
+<% if flash[:product]%>
+  <% flash[:product].each do |err|%>
+    <p>
+      <%=err%>
+    </p>
+  <%end%>
+<%end%>
+<form action="/dashboards" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <input type="text" name="product[name]" placeholder="Product Name">
+  <br>
+  <input type="number" name="product[price]" placeholder="Amount">
+  <br>
+  <input type="submit" name="" value="submit">
+</form>
+<br>
+<h2>Your products that are not yet sold</h2>
+  <table>
+    <tr>
+      <th>Product</th>
+      <th>Date Posted</th>
+      <th>Amount</th>
+      <th>Action</th>
+    </tr>
+    <%@products.each do |product|%>
+      <%if not @sale.each.any? {|i| i.shoe_id == product.id}%>
+        <tr>
+          <td><%=product.name%></td>
+          <td><%=product.created_at.strftime('%B %d, %Y')%></td>
+          <td><%=number_to_currency(product.price)%></td>
+          <td><%=link_to 'delete', shoe_path(product.id), method: :delete%></td>
+        </tr>
+      <%end%>
+    <%end%>
+  </table>
+<h2>Sales</h2>
+  <table>
+    <tr>
+      <th>Product</th>
+      <th>Date Bought</th>
+      <th>Buyer</th>
+      <th>Amount</th>
+    </tr>
+    <% @totalsale.each do |purchase|%>
+      <tr>
+        <td><%=purchase.shoe.name%></td>
+        <td><%=purchase.created_at.strftime('%B %d, %Y')%></td>
+        <td><%=purchase.shoe.user.first_name%></td>
+        <td><%=number_to_currency(purchase.shoe.price)%></td>
+      </tr>
+    <%end%>
+  </table>
+<h2>Purchases</h2>
+  <table>
+    <tr>
+      <th>Product</th>
+      <th>Date Bought</th>
+      <th>Seller</th>
+      <th>Amount</th>
+    </tr>
+    <% @purchases.each do |purchase|%>
+      <tr>
+        <td><%=purchase.shoe.name%></td>
+        <td><%=purchase.created_at.strftime('%B %d, %Y')%></td>
+        <td><%=purchase.shoe.user.first_name%></td>
+        <td><%=number_to_currency(purchase.shoe.price)%></td>
+      </tr>
+    <%end%>
+  </table>

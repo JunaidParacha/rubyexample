@@ -1,0 +1,58 @@
+// Place all the styles related to the Welcomes controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+*{
+  font-family: avenir;
+  text-align: center;
+}
+fieldset{
+  display: inline-block;
+  width: 300px;
+  vertical-align: top;
+}
+b{
+  color: red;
+}
+input[type = submit] {
+  width: 100px;
+  border-radius: 5%;
+  background-color: darkblue ;
+  color: white;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+h1, legend{
+  color: #00947e ;
+}
+table, tr, td, th {
+   border: darkblue solid 1px;
+   padding: 10px;
+ }
+ fieldset {
+   width: 700px;
+   margin: auto;
+ }
+ th, h1, legend{
+   color: darkblue;
+ }
+
+ table {
+   background-color: lightgray;
+   overflow: scroll;
+   margin: auto;
+ }
+ tr, td, th {
+   background-color: white;
+ }
+ .event{
+   display: inline-block;
+   vertical-align: top;
+   width: 630px;
+ }
+ .table{
+   overflow: scroll;
+   height: 450px;
+ }
+ul {
+  list-style: none;
+  color: red;
+}
