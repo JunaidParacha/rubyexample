@@ -1,0 +1,21 @@
+<nav class="navbar navbar-inverse" role="navigation">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-10">
+        <p class="welcomeText"> Welcome:  <%=session[:user_email]%> </p>
+      </div>
+      <div class="col-sm-1">
+        <%=link_to 'Log Out', logout_path%>
+      </div>
+    </div>
+    <div class="row">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="/main">Home</a>
+        <ul class="nav nav-tabs" role="tablist">
+          <li class="active"><%= link_to 'View list' %></li>
+          <li><%= link_to 'New todo' %></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>

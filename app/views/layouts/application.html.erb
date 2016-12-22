@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SKEvents</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <%= image_tag"welcome.jpg", :alt => "welcome feed", id: "welcome_img" %>
+  <%if session[:user_email]%>
+    <%= render 'shared/navigation' %>
+  <%end%>
+
+  <div id="main-container" class="container">
+    <div id="content" class="col-xs-1">
+    </div>
+
+    <div id="content" class="col-xs-10">
+      <%= yield %>
+    </div>
+
+    <div id="content" class="col-xs-1">
+    </div>
+  </div>
+
+</body>
+</html>

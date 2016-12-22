@@ -1,0 +1,40 @@
+// Place all the styles related to the Mains controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+*{
+  margin: 0;
+  padding: 0;
+  // background-color: black;
+}
+.welcomeText{
+  color: white;
+}
+.mainSlides {
+  border: 5px solid white;
+  margin: 20px;
+  position: relative;
+  background-color: white;
+}
+.fb-page {
+  margin-left: 50px;
+  position: relative;
+}
+.wrapper {
+  z-index: 3;
+  height: 800px;
+  width: auto;
+  overflow: scroll;
+}
+.info {
+  margin-left: 50px;
+  font-weight: bold;
+  // font-style: oblique;
+  color: blue;
+  text-shadow:
+   -1px -1px 0 white,
+    1px -1px 0 white,
+    -1px 1px 0 white,
+     1px 1px 0 white;
+ // background-color: lightgray;
+ padding: 2px;
+}

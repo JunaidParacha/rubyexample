@@ -1,0 +1,54 @@
+<div class="wrapper">
+  <div class="container">
+    <div class="col-sm-10">
+      <%= image_tag"main1.jpg", :alt => "main1 feed", height: '400', width: '800', class: "mainSlides" %>
+      <%= image_tag"main2.jpg", :alt => "main2 feed", height: '400', width: '800', class: "mainSlides" %>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="col-sm-10">
+      <div class="col-sm-6">
+        <div class="fb-page" data-href="https://www.facebook.com/SkyHouseEvents/" data-tabs="timeline" data-width="500" data-height="500" data-small-header="true" data-adapt-container-width="true" data-hide-cover="true" data-show-facepile="false"><blockquote cite="https://www.facebook.com/SkyHouseEvents/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/SkyHouseEvents/">Sky House Event</a></blockquote>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="info">
+          <h3>Contact info</h3>
+          <p>Phone number: (214)507-6230</p>
+          <p>Email: Junaid@SkyHouseEvent.com</p>
+          <p>Location: Dallas/Fortworth metroplex</p>
+        </div>
+        <div class="fb-page" data-href="https://www.facebook.com/SkyHouseEvents/photos//?ref=page_internal" data-tabs="messages" data-small-header="true" data-width="400" data-height="300" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false"><blockquote cite="https://www.facebook.com/SkyHouseEvents/photos//?ref=page_internal" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/SkyHouseEvents/photos//?ref=page_internal">Sky House Event</a></blockquote></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
+<script>
+var myIndex = 0;
+carousel();
+
+function carousel() {
+    var i;
+    var x = document.getElementsByClassName("mainSlides");
+    for (i = 0; i < x.length; i++) {
+      x[i].style.display = "none";
+    }
+    myIndex++;
+    if (myIndex > x.length) {myIndex = 1}
+    x[myIndex-1].style.display = "block";
+    setTimeout(carousel, 2500);
+}
+</script>
