@@ -6,14 +6,17 @@
       </div>
       <div class="col-sm-1">
         <%=link_to 'Log Out', logout_path%>
+
       </div>
     </div>
     <div class="row">
       <div class="navbar-header">
-        <a class="navbar-brand" href="/main">Home</a>
-        <ul class="nav nav-tabs" role="tablist">
-          <li class="active"><%= link_to 'View list' %></li>
-          <li><%= link_to 'New todo' %></li>
+        <!-- <a class="navbar-brand" href="/main">Home</a> -->
+        <ul id="relaod"class="nav nav-tabs" role="tablist">
+          <li class="active">Sky House Events</li>
+          <li><%=link_to 'Home', main_path%></li>
+          <li><%=link_to 'Gallary', gallary_path%></li>
+          <li><%=link_to 'About us', contact_path%></li>
         </ul>
       </div>
     </div>

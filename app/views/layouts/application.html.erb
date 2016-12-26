@@ -7,21 +7,21 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <%= image_tag"welcome.jpg", :alt => "welcome feed", id: "welcome_img" %>
+
   <%if session[:user_email]%>
     <%= render 'shared/navigation' %>
   <%end%>
 
   <div id="main-container" class="container">
-    <div id="content" class="col-xs-1">
+    <!-- <div id="content" class="col-xs-1">
     </div>
 
-    <div id="content" class="col-xs-10">
+    <div id="content" class="col-xs-10"> -->
       <%= yield %>
-    </div>
+    <!-- </div>
 
     <div id="content" class="col-xs-1">
-    </div>
+    </div> -->
   </div>
 
 </body>
